@@ -28,6 +28,9 @@ export const App = () => {
           value={searchTerm}
           placeholder="Search for movies"
           onChange={(event) => setSearchTerm(event.target.value)}
+          onKeyDown={(e) =>{
+            if(e.key == 'Enter'){searchMovies(searchTerm)}
+          }}
         />
         <img src={SearchIcon} alt="search" onClick={() => searchMovies(searchTerm)} />
       </div>
